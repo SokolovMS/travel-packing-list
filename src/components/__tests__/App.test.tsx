@@ -35,7 +35,13 @@ describe("App", () => {
       expect(screen.getByRole("heading", { name: "Travel packing list" })).toBeVisible()
 
       // And: I see card's titles in English
-      expectToSeeCardTitles(["Essentials", "Clothes and shoes", "Toiletries", "Other"])
+      expectToSeeCardTitles([
+        "Essentials",
+        "Electronics",
+        "Clothes and shoes",
+        "Toiletries and First Aid Kit",
+        "Other",
+      ])
 
       // And: I see checkbox labels in English
       expect(screen.getByRole("checkbox", { name: "Passport" })).toBeInTheDocument()
@@ -58,7 +64,13 @@ describe("App", () => {
       expect(screen.getByRole("heading", { name: "Lista de viaje" })).toBeVisible()
 
       // And: I see card's titles in Spanish
-      expectToSeeCardTitles(["Esenciales", "Ropa y zapatos", "Artículos de tocador", "Otro"])
+      expectToSeeCardTitles([
+        "Esenciales",
+        "Electrónica",
+        "Ropa y zapatos",
+        "Artículos de tocador and Botiquín de primeros auxilios",
+        "Otro",
+      ])
 
       // And: I see checkbox labels in Spanish
       expect(screen.getByRole("checkbox", { name: "Pasaporte" })).toBeInTheDocument()
@@ -85,22 +97,14 @@ describe("App", () => {
       // And: I see card's titles in Slovenian
       expectToSeeCardTitles([
         "Osnovne potrebščine",
+        "Elektronika",
         "Oblačila in obutev",
-        "Toaletne potrebščine",
+        "Toaletni pribor in komplet prve pomoči",
         "Razno",
       ])
 
       // And: I see checkbox labels in Slovenian
       expect(screen.getByRole("checkbox", { name: "Potni list" })).toBeInTheDocument()
-    })
-
-    it("displays link to my portfolio in the footer", () => {
-      // Given: I have opened an app
-      // And: I see link to my portfolio
-      expect(screen.getByRole("link", { name: "Žana Flander" })).toHaveAttribute(
-        "href",
-        "https://flanzana.github.io/",
-      )
     })
 
     it("displays sidebar", async () => {
@@ -116,22 +120,11 @@ describe("App", () => {
       )
       const sidebar = screen.getByTestId("SidebarContent")
 
-      // And: I see language section in the sidebar with all 3 languages
+      // And: I see language section in the sidebar with all languages
       expect(within(sidebar).getByText(/jezik/i)).toBeVisible()
-      ;["English", "Español", "Slovenščina"].forEach(language => {
+      ;["English", "Русский", "Español", "Slovenščina"].forEach(language => {
         expect(within(sidebar).getByRole("button", { name: language })).toBeVisible()
       })
-
-      // And: I see more about section in the sidebar with link to my portfolio and to Orbit
-      expect(within(sidebar).getByText(/več o/i)).toBeVisible()
-      expect(within(sidebar).getByRole("link", { name: "Žana Flander" })).toHaveAttribute(
-        "href",
-        "https://flanzana.github.io/",
-      )
-      expect(within(sidebar).getByRole("link", { name: "Design system Orbit" })).toHaveAttribute(
-        "href",
-        "https://orbit.kiwi",
-      )
     })
 
     it("closes sidebar by clicking Close button", async () => {
@@ -198,11 +191,12 @@ describe("App", () => {
       const [_, bottomNavbar] = screen.getAllByRole("navigation")
       expect(bottomNavbar).toBeVisible()
 
-      // And: I see icon button to all 4 card's titles
+      // And: I see icon button to all card's titles
       ;[
         "Desplaza a la lista Esenciales",
+        "Desplaza a la lista Electrónica",
         "Desplaza a la lista Ropa y zapatos",
-        "Desplaza a la lista Artículos de tocador",
+        "Desplaza a la lista Artículos de tocador and Botiquín de primeros auxilios",
         "Desplaza a la lista Otro",
       ].forEach(name => {
         expect(within(bottomNavbar).getByRole("button", { name })).toBeVisible()

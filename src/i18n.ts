@@ -2,6 +2,7 @@ import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
 
 import enTranslations from "./assets/translations/en.json"
+import ruTranslations from "./assets/translations/ru.json"
 import siTranslations from "./assets/translations/si.json"
 import esTranslations from "./assets/translations/es.json"
 import { Language } from "./types"
@@ -11,6 +12,9 @@ import { Language } from "./types"
 const resources = {
   [Language.ENGLISH]: {
     translations: enTranslations,
+  },
+  [Language.RUSSIAN]: {
+    translations: ruTranslations,
   },
   [Language.SPANISH]: {
     translations: esTranslations,

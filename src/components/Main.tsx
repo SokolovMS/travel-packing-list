@@ -25,13 +25,14 @@ const Main = (): ReactNode => (
       columnGap={spaceMedium}
       rowGap={spaceSmall}
       largeMobile={{ columns: "1fr 1fr", rowGap: spaceMedium }}
-      desktop={{ columns: "1fr 1fr 1fr 1fr" }}
+      desktop={{ columns: "1fr 1fr 1fr 1fr 1fr" }}
       largeDesktop={{ rowGap: spaceLarge, columnGap: spaceLarge }}
     >
       {[
         ListCategory.ESSENTIALS,
+        ListCategory.ELECTRONICS,
         ListCategory.CLOTHES,
-        ListCategory.TOILETRIES,
+        ListCategory.HYGIENE_CARE,
         ListCategory.OTHER,
       ].map(category => (
         <TravelCard

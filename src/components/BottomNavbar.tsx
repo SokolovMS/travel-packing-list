@@ -90,8 +90,9 @@ const BottomNavbar = ({ toggleSidebar }: Props): ReactNode => (
     <Stack direction="row" justify="around" align="center" spacing="none">
       {[
         ListCategory.ESSENTIALS,
+        ListCategory.ELECTRONICS,
         ListCategory.CLOTHES,
-        ListCategory.TOILETRIES,
+        ListCategory.HYGIENE_CARE,
         ListCategory.OTHER,
       ].map(category => (
         <CategoryButton key={category} category={category} />

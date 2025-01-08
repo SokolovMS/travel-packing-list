@@ -6,6 +6,11 @@ export const LANGUAGES_DATA: LanguagesData = {
     flagCode: "gb",
     title: "English",
   },
+  [Language.RUSSIAN]: {
+    value: Language.RUSSIAN,
+    flagCode: "ru",
+    title: "Русский",
+  },
   [Language.SPANISH]: {
     value: Language.SPANISH,
     flagCode: "es",

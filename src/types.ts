@@ -1,12 +1,14 @@
 export enum ListCategory {
   ESSENTIALS = "essentials",
+  ELECTRONICS = "electronics",
   CLOTHES = "clothes",
-  TOILETRIES = "toiletries",
+  HYGIENE_CARE = "hygiene_care",
   OTHER = "other",
 }
 
 export enum Language {
   ENGLISH = "en",
+  RUSSIAN = "ru",
   SPANISH = "es",
   SLOVENIAN = "si",
 }
@@ -20,8 +22,8 @@ export enum EditMode {
 
 type LanguageData = {
   value: Language
-  flagCode: "gb" | "es" | "si"
-  title: "English" | "Español" | "Slovenščina"
+  flagCode: "es" | "ru" | "si" | "gb"
+  title: "English" | "Русский" | "Español" | "Slovenščina"
 }
 
 export type LanguagesData = Record<Language, LanguageData>

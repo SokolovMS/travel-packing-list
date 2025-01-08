@@ -60,10 +60,6 @@ const SidebarContent = ({ closeSidebar }: Props): ReactNode => {
           <LanguageLink key={lang} language={lang} onClick={() => handleChangeLanguage(lang)} />
         ))}
       </SidebarContentPart>
-      <SidebarContentPart title={t("sidebar.title.more_about")}>
-        <AboutLink label="Žana Flander" href="https://flanzana.github.io/" />
-        <AboutLink label="Design system Orbit" href="https://orbit.kiwi" />
-      </SidebarContentPart>
     </Stack>
   )
 }

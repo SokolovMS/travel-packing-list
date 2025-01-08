@@ -1,11 +1,9 @@
 import { ReactNode } from "react"
 import { useTranslation } from "react-i18next"
 import LinkList from "@kiwicom/orbit-components/lib/LinkList"
-import TextLink from "@kiwicom/orbit-components/lib/TextLink"
 import Stack from "@kiwicom/orbit-components/lib/Stack"
 import Heading from "@kiwicom/orbit-components/lib/Heading"
 import Separator from "@kiwicom/orbit-components/lib/Separator"
-import { Code } from "@kiwicom/orbit-components/lib/icons"
 
 import LanguageLink from "../LanguageLink"
 import { Language } from "../../types"
@@ -25,19 +23,6 @@ const SidebarContentPart = ({ title, children }: SidebarContentPartProps): React
       </LinkList>
     </Stack>
   </>
-)
-
-type AboutLinkProps = {
-  href: string
-  label: string
-}
-const AboutLink = ({ href, label }: AboutLinkProps): ReactNode => (
-  <TextLink href={href} type="secondary" title={label} standAlone external noUnderline>
-    <Stack direction="row" align="center" spacing="XSmall">
-      <Code size="small" />
-      <span>{label}</span>
-    </Stack>
-  </TextLink>
 )
 
 type Props = {

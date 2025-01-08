@@ -68,7 +68,7 @@
   "hygiene_care": {
     "category": "hygiene_care",
     "items": [
-      "item.toothbrush",
+      "item.tooth",
       "item.mouthwash",
       "item.perfume",
       "item.shower",

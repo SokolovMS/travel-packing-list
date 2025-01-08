@@ -8,8 +8,10 @@ const useTranslatedCategory = (category: ListCategory): string => {
   switch (category) {
     case ListCategory.ESSENTIALS:
       return t("category.essentials")
-    case ListCategory.TOILETRIES:
-      return t("category.toiletries")
+    case ListCategory.ELECTRONICS:
+      return t("category.electronics")
+    case ListCategory.HYGIENE_CARE:
+      return t("category.hygiene_care")
     case ListCategory.OTHER:
       return t("category.other")
     case ListCategory.CLOTHES:

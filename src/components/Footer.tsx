@@ -7,9 +7,9 @@ const Footer = (): ReactNode => (
   <Box as="footer" padding={{ top: "none", bottom: "small", left: "XXLarge", right: "XXLarge" }}>
     <Text size="small" align="center">
       <TextLink href="https://flanzana.github.io/" external type="secondary" noUnderline>
-        Žana Flander
+        Žana Flander and Mikhail Sokolov
       </TextLink>
-      <span> © 2024</span>
+      <span> © 2025</span>
     </Text>
   </Box>
 )
